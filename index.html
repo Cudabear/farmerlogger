@@ -1,0 +1,869 @@
+<html>
+    <head>
+        <title> Cudabear's Master Farmer Logger </title>
+
+        <!-- Global Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="res/styles.css">
+
+        <!-- Javascript Libraries -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="lib/jquerycookie.js"></script>
+
+        <!-- Global Javascript -->
+        <script type="text/javascript" src="src/app.js"></script>
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="full-width center-text title"> Inputs </div>
+            <!-- Inputs -->
+            <table class="full-width">
+                <tr class="title-row">
+                    <td>Allotments</td>
+                    <td>Hops</td>
+                    <td>Bushes</td>
+                    <td>Flowers</td>
+                    <td>Herbs</td>
+                    <td>Special</td>
+                <tr>
+                <tr class="tall-row">
+                    <!-- allotments -->
+                    <td>
+                        <!-- potatoes -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/potato.png"></td>
+                                <td class="title-column">potato</td>
+                                <td class="input-column"><button onclick="handleInput('potato', 1)">+1</button></td>
+                                <td class="input-column"><button onclick="handleInput('potato', 2)">+2</button></td>
+                                <td class="input-column"><button onclick="handleInput('potato', 3)">+3</button></td>
+                                <td class="count-column">Total: <label id="potato-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- onions -->
+                        <table class="input-table">
+                            <tr>
+                                <td><img src="res/img/onion.png"></td>
+                                <td class="title-column">onion</td>
+                                <td class="input-column"><button onclick="handleInput('onion', 1)">+1</button></td>
+                                <td class="input-column"><button onclick="handleInput('onion', 2)">+2</button></td>
+                                <td class="input-column"><button onclick="handleInput('onion', 3)">+3</button></td>
+                                <td class="count-column">Total: <label id="onion-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- cabbage -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/cabbage.png"></td>
+                                <td class="title-column">cabbage</td>
+                                <td class="input-column"><button onclick="handleInput('cabbage', 1)">+1</button></td>
+                                <td class="input-column"><button onclick="handleInput('cabbage', 2)">+2</button></td>
+                                <td class="input-column"><button onclick="handleInput('cabbage', 3)">+3</button></td>
+                                <td class="count-column">Total: <label id="cabbage-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- tomato -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/tomato.png"></td>
+                                <td class="title-column">tomato</td>
+                                <td class="input-column"><button onclick="handleInput('tomato', 1)">+1</button></td>
+                                <td class="input-column"><button onclick="handleInput('tomato', 2)">+2</button></td>
+                                <td class="input-column"></td>
+                                <td class="count-column">Total: <label id="tomato-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- sweetcorn -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/sweetcorn.png"></td>
+                                <td class="title-column">sweetcorn</td>
+                                <td class="input-column"><button onclick="handleInput('sweetcorn', 1)">+1</button></td>
+                                <td class="input-column"><button onclick="handleInput('sweetcorn', 2)">+2</button></td>
+                                <td class="input-column"></td>
+                                <td class="count-column">Total: <label id="sweetcorn-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- strawberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/strawberry.png"></td>
+                                <td class="title-column">strawberry</td>
+                                <td class="input-column"><button onclick="handleInput('strawberry', 1)">+1</button></td>
+                                <td class="input-column"></td>
+                                <td class="input-column"></td>
+                                <td class="count-column">Total: <label id="strawberry-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- watermelon -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/watermelon.png"></td>
+                                <td class="title-column">watermelon</td>
+                                <td class="input-column"><button onclick="handleInput('watermelon', 1)">+1</button></td>
+                                <td class="input-column"></td>
+                                <td class="input-column"></td>
+                                <td class="count-column">Total: <label id="watermelon-count">0</label></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Hops -->
+                    <td>
+                        <!-- barley -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/barley.png"></td>
+                                <td class="title-column">barley</td>
+                                <td class="input-column"><button onclick="handleInput('barley', 1)">+1</button></td>
+                                <td class="input-column"><button onclick="handleInput('barley', 2)">+2</button></td>
+                                <td class="input-column"><button onclick="handleInput('barley', 3)">+3</button></td>
+                                <td class="input-column"><button onclick="handleInput('barley', 4)">+4</button></td>
+                                <td class="count-column">Total: <label id="barley-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- hammerstone -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/hammerstone.png"></td>
+                                <td class="title-column">hammerstone</td>
+                                <td class="input-column"><button onclick="handleInput('hammerstone', 1)">+1</button></td>
+                                <td class="input-column"><button onclick="handleInput('hammerstone', 2)">+2</button></td>
+                                <td class="input-column"><button onclick="handleInput('hammerstone', 3)">+3</button></td>
+                                <td class="input-column"></td>
+                                <td class="count-column">Total: <label id="hammerstone-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- asgarnian -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/asgarnian.png"></td>
+                                <td class="title-column">asgarnian</td>
+                                <td class="input-column"><button onclick="handleInput('asgarnian', 1)">+1</button></td>
+                                <td class="input-column"><button onclick="handleInput('asgarnian', 2)">+2</button></td>
+                                <td class="input-column"></td>
+                                <td class="input-column"></td>
+                                <td class="count-column">Total: <label id="asgarnian-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- jute -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/jute.png"></td>
+                                <td class="title-column">jute</td>
+                                <td class="input-column"><button onclick="handleInput('jute', 1)">+1</button></td>
+                                <td class="input-column"><button onclick="handleInput('jute', 2)">+2</button></td>
+                                <td class="input-column"><button onclick="handleInput('jute', 3)">+3</button></td>
+                                <td class="input-column"></td>
+                                <td class="count-column">Total: <label id="jute-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- yanillian -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/yanillian.png"></td>
+                                <td class="title-column">yanillian</td>
+                                <td class="input-column"><button onclick="handleInput('yanillian', 1)">+1</button></td>
+                                <td class="input-column"><button onclick="handleInput('yanillian', 2)">+2</button></td>
+                                <td class="input-column"></td>
+                                <td class="input-column"></td>
+                                <td class="count-column">Total: <label id="yanillian-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- krandorian -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/krandorian.png"></td>
+                                <td class="title-column">krandorian</td>
+                                <td class="input-column"><button onclick="handleInput('krandorian', 1)">+1</button></td>
+                                <td class="input-column"></td>
+                                <td class="input-column"></td>
+                                <td class="input-column"></td>
+                                <td class="count-column">Total: <label id="krandorian-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- wildblood -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/wildblood.png"></td>
+                                <td class="title-column">wildblood</td>
+                                <td class="input-column"><button onclick="handleInput('wildblood', 1)">+1</button></td>
+                                <td class="input-column"></td>
+                                <td class="input-column"></td>
+                                <td class="input-column"></td>
+                                <td class="count-column">Total: <label id="wildblood-count">0</label></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Bushes -->
+                    <td>
+                        <!-- redberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/redberry.png"></td>
+                                <td class="title-column">redberry</td>
+                                <td class="input-column"><button onclick="handleInput('redberry', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="redberry-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- cadavaberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/cadavaberry.png"></td>
+                                <td class="title-column">cadavaberry</td>
+                                <td class="input-column"><button onclick="handleInput('cadavaberry', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="cadavaberry-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- dwellberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/dwellberry.png"></td>
+                                <td class="title-column">dwellberry</td>
+                                <td class="input-column"><button onclick="handleInput('dwellberry', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="dwellberry-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- jangerberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/jangerberry.png"></td>
+                                <td class="title-column">jangerberry</td>
+                                <td class="input-column"><button onclick="handleInput('jangerberry', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="jangerberry-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- whiteberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/whiteberry.png"></td>
+                                <td class="title-column">whiteberry</td>
+                                <td class="input-column"><button onclick="handleInput('whiteberry', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="whiteberry-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- poison ivy -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/poisonivy.png"></td>
+                                <td class="title-column">poison ivy</td>
+                                <td class="input-column"><button onclick="handleInput('poisonivy', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="poisonivy-count">0</label></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Flowers -->
+                    <td>
+                        <!-- marigold -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/marigold.png"></td>
+                                <td class="title-column">marigold</td>
+                                <td class="input-column"><button onclick="handleInput('marigold', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="marigold-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- rosemary -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/rosemary.png"></td>
+                                <td class="title-column">rosemary</td>
+                                <td class="input-column"><button onclick="handleInput('rosemary', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="rosemary-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- nasturtium -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/nasturtium.png"></td>
+                                <td class="title-column">nasturtium</td>
+                                <td class="input-column"><button onclick="handleInput('nasturtium', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="nasturtium-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- woad -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/woad.png"></td>
+                                <td class="title-column">woad</td>
+                                <td class="input-column"><button onclick="handleInput('woad', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="woad-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- limpwurt -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/limpwurt.png"></td>
+                                <td class="title-column">limpwurt</td>
+                                <td class="input-column"><button onclick="handleInput('limpwurt', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="limpwurt-count">0</label></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Herbs -->
+                    <td>
+                        <!-- guam -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">guam</td>
+                                <td class="input-column"><button onclick="handleInput('guam', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="guam-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- marrentill -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">marrentill</td>
+                                <td class="input-column"><button onclick="handleInput('marrentill', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="marrentill-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- tarromin -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">tarromin</td>
+                                <td class="input-column"><button onclick="handleInput('tarromin', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="tarromin-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- harralander -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">harralander</td>
+                                <td class="input-column"><button onclick="handleInput('harralander', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="harralander-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- ranarr -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">ranarr</td>
+                                <td class="input-column"><button onclick="handleInput('ranarr', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="ranarr-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- toadflax -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">toadflax</td>
+                                <td class="input-column"><button onclick="handleInput('toadflax', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="toadflax-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- irit -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">irit</td>
+                                <td class="input-column"><button onclick="handleInput('irit', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="irit-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- avantoe -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">avantoe</td>
+                                <td class="input-column"><button onclick="handleInput('avantoe', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="avantoe-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- kwuarm -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">kwuarm</td>
+                                <td class="input-column"><button onclick="handleInput('kwuarm', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="kwuarm-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- snapdragon -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">snapdragon</td>
+                                <td class="input-column"><button onclick="handleInput('snapdragon', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="snapdragon-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- cadantine -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">cadantine</td>
+                                <td class="input-column"><button onclick="handleInput('cadantine', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="cadantine-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- lantadyme -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">lantadyme</td>
+                                <td class="input-column"><button onclick="handleInput('lantadyme', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="lantadyme-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- dwarf weed -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">dwarf weed</td>
+                                <td class="input-column"><button onclick="handleInput('dwarfweed', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="dwarfweed-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- torstol -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">torstol</td>
+                                <td class="input-column"><button onclick="handleInput('torstol', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="torstol-count">0</label></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Special -->
+                    <td>
+                        <!-- bittercap -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/bittercapmushroom.png"></td>
+                                <td class="title-column">bittercap</td>
+                                <td class="input-column"><button onclick="handleInput('bittercap', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="bittercap-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- belladonna -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/belladonna.png"></td>
+                                <td class="title-column">belladonna</td>
+                                <td class="input-column"><button onclick="handleInput('belladonna', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="belladonna-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- morchella -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/morchellamushroom.png"></td>
+                                <td class="title-column">morchella</td>
+                                <td class="input-column"><button onclick="handleInput('morchella', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="morchella-count">0</label></td>
+                            </tr>
+                        </table>
+                        <!-- cactus -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/cactus.png"></td>
+                                <td class="title-column">cactus</td>
+                                <td class="input-column"><button onclick="handleInput('cactus', 1)">+1</button></td>
+                                <td class="count-column">Total: <label id="cactus-count">0</label></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- analysis -->
+            <div class="full-width center-text title"> Analysis <button onclick="resetCookie()">Reset Data.  There is no UNDO! </button> </div>
+            <table class="full-width analysis-table">
+                <tr class="title-row">
+                    <td>Allotments</td>
+                    <td>Hops</td>
+                    <td>Bushes</td>
+                    <td>Flowers</td>
+                    <td>Herbs</td>
+                    <td>Special</td>
+                <tr>
+                <tr class="tall-row">
+                    <!-- allotments -->
+                    <td>
+                        <!-- potatoes -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/potato.png"></td>
+                                <td class="title-column">potato</td>
+                                <td class="count-column"><label id="potato-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- onions -->
+                        <table class="input-table">
+                            <tr>
+                                <td><img src="res/img/onion.png"></td>
+                                <td class="title-column">onion</td>
+                                <td class="count-column"><label id="onion-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- cabbage -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/cabbage.png"></td>
+                                <td class="title-column">cabbage</td>
+                                <td class="count-column"><label id="cabbage-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- tomato -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/tomato.png"></td>
+                                <td class="title-column">tomato</td>
+                                <td class="count-column"><label id="tomato-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- sweetcorn -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/sweetcorn.png"></td>
+                                <td class="title-column">sweetcorn</td>
+                                <td class="count-column"><label id="sweetcorn-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- strawberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/strawberry.png"></td>
+                                <td class="title-column">strawberry</td>
+                                <td class="count-column"><label id="strawberry-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- watermelon -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/watermelon.png"></td>
+                                <td class="title-column">watermelon</td>
+                                <td class="count-column"><label id="watermelon-percent">0%</label></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Hops -->
+                    <td>
+                        <!-- barley -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/barley.png"></td>
+                                <td class="title-column">barley</td>
+                                <td class="count-column"><label id="barley-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- hammerstone -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/hammerstone.png"></td>
+                                <td class="title-column">hammerstone</td>
+                                <td class="count-column"><label id="hammerstone-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- asgarnian -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/asgarnian.png"></td>
+                                <td class="title-column">asgarnian</td>
+                                <td class="count-column"><label id="asgarnian-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- jute -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/jute.png"></td>
+                                <td class="title-column">jute</td>
+                                <td class="count-column"><label id="jute-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- yanillian -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/yanillian.png"></td>
+                                <td class="title-column">yanillian</td>
+                                <td class="count-column"><label id="yanillian-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- krandorian -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/krandorian.png"></td>
+                                <td class="title-column">krandorian</td>
+                                <td class="count-column"><label id="krandorian-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- wildblood -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/wildblood.png"></td>
+                                <td class="title-column">wildblood</td>
+                                <td class="count-column"><label id="wildblood-percent">0%</label></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Bushes -->
+                    <td>
+                        <!-- redberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/redberry.png"></td>
+                                <td class="title-column">redberry</td>
+                                <td class="count-column"><label id="redberry-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- cadavaberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/cadavaberry.png"></td>
+                                <td class="title-column">cadavaberry</td>
+                                <td class="count-column"><label id="cadavaberry-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- dwellberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/dwellberry.png"></td>
+                                <td class="title-column">dwellberry</td>
+                                <td class="count-column"><label id="dwellberry-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- jangerberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/jangerberry.png"></td>
+                                <td class="title-column">jangerberry</td>
+                                <td class="count-column"><label id="jangerberry-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- whiteberry -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/whiteberry.png"></td>
+                                <td class="title-column">whiteberry</td>
+                                <td class="count-column"><label id="whiteberry-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- poison ivy -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/poisonivy.png"></td>
+                                <td class="title-column">poison ivy</td>
+                                <td class="count-column"><label id="poisonivy-percent">0%</label></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Flowers -->
+                    <td>
+                        <!-- marigold -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/marigold.png"></td>
+                                <td class="title-column">marigold</td>
+                                <td class="count-column"><label id="marigold-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- rosemary -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/rosemary.png"></td>
+                                <td class="title-column">rosemary</td>
+                                <td class="count-column"><label id="rosemary-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- nasturtium -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/nasturtium.png"></td>
+                                <td class="title-column">nasturtium</td>
+                                <td class="count-column"><label id="nasturium-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- woad -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/woad.png"></td>
+                                <td class="title-column">woad</td>
+                                <td class="count-column"><label id="woad-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- limpwurt -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/limpwurt.png"></td>
+                                <td class="title-column">limpwurt</td>
+                                <td class="count-column"><label id="limpwurt-percent">0%</label></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Herbs -->
+                    <td>
+                        <!-- guam -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">guam</td>
+                                <td class="count-column"><label id="guam-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- marrentill -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">marrentill</td>
+                                <td class="count-column"><label id="marrentill-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- tarromin -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">tarromin</td>
+                                <td class="count-column"><label id="tarromin-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- harralander -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">harralander</td>
+                                <td class="count-column"><label id="harralander-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- ranarr -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">ranarr</td>
+                                <td class="count-column"><label id="ranarr-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- toadflax -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">toadflax</td>
+                                <td class="count-column"><label id="toadflax-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- irit -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">irit</td>
+                                <td class="count-column"><label id="irit-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- avantoe -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">avantoe</td>
+                                <td class="count-column"><label id="avantoe-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- kwuarm -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">kwuarm</td>
+                                <td class="count-column"><label id="kwuarm-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- snapdragon -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">snapdragon</td>
+                                <td class="count-column"><label id="snapdragon-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- cadantine -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">cadantine</td>
+                                <td class="count-column"><label id="cadantine-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- lantadyme -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">lantadyme</td>
+                                <td class="count-column"><label id="lantadyme-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- dwarf weed -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">dwarf weed</td>
+                                <td class="count-column"><label id="dwarfweed-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- torstol -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/herb.png"></td>
+                                <td class="title-column">torstol</td>
+                                <td class="count-column"><label id="torstol-percent">0%</label></td>
+                            </tr>
+                        </table>
+                    </td>
+
+                    <!-- Special -->
+                    <td>
+                        <!-- bittercap -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/bittercapmushroom.png"></td>
+                                <td class="title-column">bittercap</td>
+                                <td class="count-column"><label id="bittercap-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- belladonna -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/belladonna.png"></td>
+                                <td class="title-column">belladonna</td>
+                                <td class="count-column"><label id="belladonna-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- morchella -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/morchellamushroom.png"></td>
+                                <td class="title-column">morchella</td>
+                                <td class="count-column"><label id="morchella-percent">0%</label></td>
+                            </tr>
+                        </table>
+                        <!-- cactus -->
+                        <table class="input-table">
+                            <tr>
+                                <td class="image-column"><img src="res/img/cactus.png"></td>
+                                <td class="title-column">cactus</td>
+                                <td class="count-column"><label id="cactus-percent">0%</label></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div id="footer">
+            <span>
+                Master Farmer Logger created by Cudabear. Questions?
+                <a href="https://github.com/Cudabear/farmerlogger">Check the github page.</a>
+                All images copyright Jagex LTD.
+            </span>
+        </div>
+    </body>
+</html>
