@@ -41,7 +41,7 @@ initData = function(){
         "whiteberry": 0,
         "whiteberry-count": 0,
         "poisonivy": 0,
-        "posionivy-count": 0,
+        "poisonivy-count": 0,
         "marigold": 0,
         "marigold-count": 0,
         "rosemary": 0,
